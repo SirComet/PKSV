@@ -1,6 +1,8 @@
 # ![pksv](assets/banner.png)
 
-Gen6+ portable Pokémon info viewer. 
+**Gen6+ portable Pokémon info viewer.**
+
+If you want a more invasive homebrew that allows modifications, check out [**PKSM**](https://github.com/BernardoGiordano/PKSM/)
 
 ## Installation
 
@@ -8,7 +10,7 @@ Download and install the latest release with your favourite installation method.
 
 If you're using Homebrew Launcher, make sure you have it updated to the [latest version](https://smealum.github.io/ninjhax2/starter.zip).
 
-If you're using Homebrew Launcher and you don't have the latest firmware on your console, you may want to use **ctr-httpwn** to get internet access and let the application download everything correctly. If you can't still download them through the application, you can put them manually in the SD card, putting the external [additionalassets folder](https://github.com/dsoldier/PKResources) (+ [this file](https://github.com/gocario/PKBrew/blob/master/pk/data/en/species_en.txt)) in your SD card, located at ` /3ds/data/PKSM/ `. To avoid troubles, the final result should be a folder filled with assets, located at ` /3ds/data/PKSM/additionalassets/ `.
+If you're using Homebrew Launcher and you don't have the latest firmware on your console, you may want to use **ctr-httpwn** to get internet access and let the application download everything correctly. If you can't still download them through the application, you can put them manually in the SD card, putting the external [additionalassets folder](https://github.com/dsoldier/PKResources) in your SD card, located at ` /3ds/data/PKSM/ `. To avoid troubles, the final result should be a folder filled with assets, located at ` /3ds/data/PKSM/additionalassets/ `.
 
 ## Compiling
 
