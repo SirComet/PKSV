@@ -243,7 +243,7 @@ void printElement(u8* pkmn, u16 n, int x, int y) {
 
 void infoViewer(u8* pkmn, int game) {
 	int y_desc = 29;
-	char* entries[] = {"Nickname:", "OT:", "Pokerus:", "Nature", "Ability:", "Item:", "PSV / ESV:", "TID / SID:", "HT/OT Fr.ship:", "Hidden Power:"};
+	char* entries[] = {"Nickname:", "OT:", "Pokerus:", "Nature", "Ability:", "Item:", "ESV / TSV:", "TID / SID:", "HT/OT Fr.ship:", "Hidden Power:"};
 	char* values[] = {"HP", "Attack", "Defence", "Sp. Atk", "Sp. Def", "Speed"};
 	
 	printAnimatedBG(true);
