@@ -335,7 +335,7 @@ void infoViewer(u8* pkmn, int game) {
 	}
 }
 
-void printPKViewer(u8* mainbuf, bool isTeam, int game, int currentEntry, int box) {
+void printPKViewer(u8* mainbuf, bool isTeam, int game, int currentEntry, int box, int modeFlag) {
 	int x;
 	char* page = (char*)malloc(7 * sizeof(char));
 	snprintf(page, 7, "Box %d", box + 1);
@@ -399,7 +399,10 @@ void printPKViewer(u8* mainbuf, bool isTeam, int game, int currentEntry, int box
 		}
 		
 		sf2d_draw_texture(selector, pointer[0], pointer[1] - movementOffsetSlow(3));
-		sftd_draw_textf(fontBold9, 16, 220, WHITE, 9, "TID: %lu / SID: %u / TSV: %u", (game < 4) ? (u32)getSaveTID(mainbuf, game) : (((u32)(getSaveSID(mainbuf, game) * 65536) + getSaveTID(mainbuf, game)) % 1000000), getSaveSID(mainbuf, game), getSaveTSV(mainbuf, game));
+		if (modeFlag == ED_STANDARD)
+			sftd_draw_textf(fontBold9, 16, 220, WHITE, 9, "TID: %lu / SID: %u / TSV: %u", (game < 4) ? (u32)getSaveTID(mainbuf, game) : (((u32)(getSaveSID(mainbuf, game) * 65536) + getSaveTID(mainbuf, game)) % 1000000), getSaveSID(mainbuf, game), getSaveTSV(mainbuf, game));	
+		else
+			sftd_draw_textf(fontBold9, 16, 220, WHITE, 9, "Seed: %lx %lx %lx %lx", getSaveSeed(mainbuf, game, 3), getSaveSeed(mainbuf, game, 2), getSaveSeed(mainbuf, game, 1), getSaveSeed(mainbuf, game, 0));	
 	sf2d_end_frame();
 	sf2d_swapbuffers();
 	

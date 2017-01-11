@@ -30,6 +30,7 @@ You need devKitPro, ctrulib, sf2d, sfil, sftd and Xerpi's portlibs to be able to
 * Gocario for PKBrew
 * MarcusD for romfs support
 * Hamcha for cybertrust.h and digicert.h
+* hirakujira for RNG seed function
 
 ## License
 

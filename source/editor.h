@@ -43,6 +43,9 @@
 #define ITEMLENGTH 2
 #define EXPPOINTLENGTH 4
 
+#define ED_STANDARD 0
+#define ED_SEED 1
+
 struct {
 	u8 species[803][12];
 	u8 pkmData[961][42];
@@ -84,5 +87,6 @@ u16 getPSV(u8* pkmn);
 u16 getSaveTID(u8* mainbuf, int game);
 u16 getSaveSID(u8* mainbuf, int game);
 u16 getSaveTSV(u8* mainbuf, int game);
+u32 getSaveSeed(u8* mainbuf, int game, int index);
 
 void pokemonEditor(u8* mainbuf, int game);

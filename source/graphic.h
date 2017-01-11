@@ -50,6 +50,6 @@ void GUIElementsExit();
 void init_font_cache();
 void infoDisp(char* message);
 void freezeMsg(char* message);
-void printPKViewer(u8* mainbuf, bool isTeam, int game, int currentEntry, int box);
+void printPKViewer(u8* mainbuf, bool isTeam, int game, int currentEntry, int box, int modeFlag);
 void printElement(u8* pkmn, u16 n, int x, int y);
 void infoViewer(u8* pkmn, int game);

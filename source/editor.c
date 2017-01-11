@@ -411,7 +411,14 @@ u16 getSaveTSV(u8* mainbuf, int game) {
 	return (TID ^ SID) >> 4;
 }
 
+u32 getSaveSeed(u8* mainbuf, int game, int index) {
+    u32 buffer;
+    memcpy(&buffer, &mainbuf[((game < 4) ? 0 : 0x6B5DC) + index * 0x4], 4);
+    return buffer;
+} 
+
 void pokemonEditor(u8* mainbuf, int game) {
+	int modeFlag = ED_STANDARD;
 	bool isTeam = false;
 	int box = 0;
 	int currentEntry = 0;
@@ -463,6 +470,14 @@ void pokemonEditor(u8* mainbuf, int game) {
 				else if (box == boxmax) 
 					box = 0;
 			}
+			
+			if (touch.px > 0 && touch.px < 210 && touch.py > 210 && touch.py < 240) {
+				if (modeFlag == ED_STANDARD)
+					modeFlag = ED_SEED;
+				else 
+					modeFlag = ED_STANDARD;
+			}
+			
 			if (touch.px > 280 && touch.px < 318 && touch.py > 210 && touch.py < 240) 
 				break;
 		} 
@@ -519,7 +534,7 @@ void pokemonEditor(u8* mainbuf, int game) {
 			}
 		}
 
-		printPKViewer(mainbuf, isTeam, game, currentEntry, box);
+		printPKViewer(mainbuf, isTeam, game, currentEntry, box, modeFlag);
 	}
 	free(pkmn);
 }
