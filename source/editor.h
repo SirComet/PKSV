@@ -59,6 +59,7 @@ void getPkmn(u8* mainbuf, const int boxnumber, const int indexnumber, u8* pkmn, 
 bool isShiny(u8* pkmn);
 bool isEgg(u8* pkmn);
 
+u8 getHPType(u8* pkmn);
 u8 getGender(u8* pkmn);
 u8 getLanguage(u8* pkmn);
 u16 getPokedexNumber(u8* pkmn);
