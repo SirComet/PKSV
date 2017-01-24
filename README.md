@@ -32,7 +32,6 @@ Lastly in case you're compiling for homebrew usage ensure you also create an xml
 * Slashcash for PCHex++ and Strackeror for PCHex
 * Gocario for PKBrew
 * MarcusD for romfs support
-* Hamcha for cybertrust.h and digicert.h
 * hirakujira for RNG seed function
 
 ## License

@@ -26,8 +26,6 @@
 #include <3ds.h>
 #include "http.h"
 #include "graphic.h"
-#include "certs/cybertrust.h"
-#include "certs/digicert.h"
 
 Result downloadFile(char* url, char* path) {
     httpcInit(0);
@@ -46,13 +44,12 @@ Result downloadFile(char* url, char* path) {
         return -1;
     }
 	
-    if (httpcSetSSLOpt(&context, 1 << 9)) {
+    if (httpcSetSSLOpt(&context, SSLCOPT_DisableVerify)) {
         infoDisp("Failed to set SSLOpt!");
         return -1;
     }
-
-    httpcAddTrustedRootCA(&context, cybertrust_cer, cybertrust_cer_len);
-    httpcAddTrustedRootCA(&context, digicert_cer, digicert_cer_len);
+	
+	httpcAddRequestHeaderField(&context, "Connection", "Keep-Alive");
 
     if (httpcBeginRequest(&context)) {
         infoDisp("Failed to begin a http request!");

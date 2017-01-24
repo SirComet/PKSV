@@ -16,7 +16,7 @@ NAME := PKSV
 BUILD_DIR := build
 OUTPUT_DIR := output
 INCLUDE_DIRS := 
-SOURCE_DIRS := source source/certs
+SOURCE_DIRS := source
 
 EXTRA_OUTPUT_FILES :=
 
